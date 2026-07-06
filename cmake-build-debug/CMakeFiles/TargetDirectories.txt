@@ -1,0 +1,3 @@
+D:/桌面/homework/操作系统/program/cmake-build-debug/CMakeFiles/program.dir
+D:/桌面/homework/操作系统/program/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/桌面/homework/操作系统/program/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,18 @@
+# ninja log v6
+22	3118	8049452857999983	CMakeFiles/program.dir/BankerSystem.cpp.obj	171b38949530b84a
+34	3079	8049452858125248	CMakeFiles/program.dir/CommandParser.cpp.obj	8d411ace93c7f33c
+440	21003	8049459226772355	CMakeFiles/program.dir/main.cpp.obj	3c4c59a7de218145
+145	3080	8049466268806216	CMakeFiles/program.dir/ConsoleUI.cpp.obj	7d53b13b5b5899d1
+20	5758	8049466267556579	CMakeFiles/program.dir/Encoding.cpp.obj	ce475c9ebaeb26a2
+40	688	8049466599135487	program.exe	2742d083190fbc6c
+116	2693	8049492837408928	build.ninja	71f67693d945f030
+19	1873	8049500032711666	CMakeFiles/program.dir/main.cpp.obj	95103decf376ff71
+49	2631	8049500033028086	CMakeFiles/program.dir/CommandParser.cpp.obj	31e13337290ba6ec
+59	2693	8049500033127721	CMakeFiles/program.dir/ConsoleUI.cpp.obj	d621d948491ba537
+40	3149	8049500032931043	CMakeFiles/program.dir/BankerSystem.cpp.obj	c6220c34905d8bad
+31	9613	8049500032842258	CMakeFiles/program.dir/Encoding.cpp.obj	eb349bbb58a61104
+9614	10817	8049500128677643	program.exe	2742d083190fbc6c
+35	3783	8049501379757335	CMakeFiles/program.dir/Encoding.cpp.obj	eb349bbb58a61104
+30	501	8049501592548312	program.exe	2742d083190fbc6c
+16	3739	8049502241734893	CMakeFiles/program.dir/Encoding.cpp.obj	eb349bbb58a61104
+3741	4450	8049502278985213	program.exe	2742d083190fbc6c
