@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="980" viewBox="0 0 1180 980">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",Arial,sans-serif;fill:#111827}
+      .box{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:12;ry:12}
+      .decision{fill:#fefce8;stroke:#ca8a04;stroke-width:2}
+      .error{fill:#fef2f2;stroke:#dc2626;stroke-width:2;rx:12;ry:12}
+      .success{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:12;ry:12}
+      .text{font:17px "Microsoft YaHei",Arial,sans-serif;fill:#111827}
+      .small{font:14px "Microsoft YaHei",Arial,sans-serif;fill:#374151}
+      .line{stroke:#2563eb;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .label{font:14px "Microsoft YaHei",Arial,sans-serif;fill:#1f2937}
+    </style>
+  </defs>
+  <rect width="1180" height="980" fill="#ffffff"/>
+  <text x="590" y="46" text-anchor="middle" class="title">资源请求流程图</text>
+
+  <rect x="440" y="80" width="300" height="70" class="box"/>
+  <text x="590" y="122" text-anchor="middle" class="text">进程 Pi 发出 Request</text>
+
+  <polygon points="590,180 730,245 590,310 450,245" class="decision"/>
+  <text x="590" y="250" text-anchor="middle" class="text">系统是否已初始化？</text>
+  <rect x="790" y="210" width="270" height="70" class="error"/>
+  <text x="925" y="252" text-anchor="middle" class="text">提示先初始化系统</text>
+
+  <polygon points="590,340 730,405 590,470 450,405" class="decision"/>
+  <text x="590" y="410" text-anchor="middle" class="text">进程编号是否合法？</text>
+  <rect x="790" y="370" width="270" height="70" class="error"/>
+  <text x="925" y="412" text-anchor="middle" class="text">提示进程编号越界</text>
+
+  <polygon points="590,500 730,565 590,630 450,565" class="decision"/>
+  <text x="590" y="570" text-anchor="middle" class="text">Request 长度是否正确？</text>
+  <rect x="790" y="530" width="270" height="70" class="error"/>
+  <text x="925" y="572" text-anchor="middle" class="text">提示向量长度错误</text>
+
+  <polygon points="300,650 440,715 300,780 160,715" class="decision"/>
+  <text x="300" y="720" text-anchor="middle" class="text">Request &lt;= Need[i]？</text>
+  <rect x="40" y="830" width="260" height="70" class="error"/>
+  <text x="170" y="858" text-anchor="middle" class="text">拒绝请求</text>
+  <text x="170" y="884" text-anchor="middle" class="small">请求超过最大需求</text>
+
+  <polygon points="590,650 730,715 590,780 450,715" class="decision"/>
+  <text x="590" y="720" text-anchor="middle" class="text">Request &lt;= Available？</text>
+  <rect x="760" y="830" width="280" height="70" class="error"/>
+  <text x="900" y="858" text-anchor="middle" class="text">拒绝请求</text>
+  <text x="900" y="884" text-anchor="middle" class="small">当前可用资源不足</text>
+
+  <rect x="435" y="820" width="310" height="90" class="box"/>
+  <text x="590" y="852" text-anchor="middle" class="text">试探性分配</text>
+  <text x="590" y="878" text-anchor="middle" class="small">Available -= Request</text>
+  <text x="590" y="902" text-anchor="middle" class="small">Allocation += Request，Need -= Request</text>
+
+  <rect x="110" y="80" width="250" height="70" class="box"/>
+  <text x="235" y="122" text-anchor="middle" class="text">执行安全性检查</text>
+
+  <polygon points="235,200 355,260 235,320 115,260" class="decision"/>
+  <text x="235" y="265" text-anchor="middle" class="text">系统是否安全？</text>
+
+  <rect x="70" y="380" width="250" height="80" class="success"/>
+  <text x="195" y="413" text-anchor="middle" class="text">正式分配资源</text>
+  <text x="195" y="440" text-anchor="middle" class="small">输出请求成功和安全序列</text>
+
+  <rect x="385" y="380" width="260" height="80" class="error"/>
+  <text x="515" y="413" text-anchor="middle" class="text">回滚试探性分配</text>
+  <text x="515" y="440" text-anchor="middle" class="small">恢复 Available / Allocation / Need</text>
+
+  <rect x="710" y="380" width="260" height="80" class="error"/>
+  <text x="840" y="413" text-anchor="middle" class="text">拒绝请求</text>
+  <text x="840" y="440" text-anchor="middle" class="small">提示系统会进入不安全状态</text>
+
+  <path d="M 590 150 L 590 180" class="line"/>
+  <path d="M 730 245 L 790 245" class="line"/>
+  <text x="744" y="226" class="label">否</text>
+  <path d="M 590 310 L 590 340" class="line"/>
+  <text x="605" y="330" class="label">是</text>
+  <path d="M 730 405 L 790 405" class="line"/>
+  <text x="744" y="386" class="label">否</text>
+  <path d="M 590 470 L 590 500" class="line"/>
+  <path d="M 730 565 L 790 565" class="line"/>
+  <text x="744" y="546" class="label">否</text>
+  <path d="M 520 620 L 360 675" class="line"/>
+  <text x="430" y="645" class="label">是</text>
+  <path d="M 300 780 L 190 830" class="line"/>
+  <text x="260" y="810" class="label">否</text>
+  <path d="M 440 715 L 450 715" class="line"/>
+  <text x="438" y="695" class="label">是</text>
+  <path d="M 730 715 L 865 830" class="line"/>
+  <text x="756" y="742" class="label">否</text>
+  <path d="M 590 780 L 590 820" class="line"/>
+  <text x="606" y="806" class="label">是</text>
+  <path d="M 435 865 C 250 865 235 250 235 150" class="line"/>
+  <path d="M 235 150 L 235 200" class="line"/>
+  <path d="M 235 320 L 195 380" class="line"/>
+  <text x="212" y="355" class="label">是</text>
+  <path d="M 355 260 C 480 275 515 325 515 380" class="line"/>
+  <text x="410" y="275" class="label">否</text>
+  <path d="M 645 420 L 710 420" class="line"/>
+</svg>

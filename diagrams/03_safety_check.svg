@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="860" viewBox="0 0 980 860">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",Arial,sans-serif;fill:#111827}
+      .box{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:12;ry:12}
+      .decision{fill:#fefce8;stroke:#ca8a04;stroke-width:2}
+      .endSafe{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:18;ry:18}
+      .endBad{fill:#fef2f2;stroke:#dc2626;stroke-width:2;rx:18;ry:18}
+      .text{font:18px "Microsoft YaHei",Arial,sans-serif;fill:#111827}
+      .small{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#374151}
+      .line{stroke:#7c3aed;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+      .label{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#1f2937}
+    </style>
+  </defs>
+  <rect width="980" height="860" fill="#ffffff"/>
+  <text x="490" y="46" text-anchor="middle" class="title">银行家算法安全性检查流程图</text>
+
+  <rect x="380" y="80" width="220" height="70" class="box"/>
+  <text x="490" y="122" text-anchor="middle" class="text">开始安全性检查</text>
+
+  <rect x="345" y="190" width="290" height="90" class="box"/>
+  <text x="490" y="225" text-anchor="middle" class="text">初始化</text>
+  <text x="490" y="252" text-anchor="middle" class="small">Work = Available，Finish[i] = false</text>
+
+  <rect x="315" y="320" width="350" height="100" class="box"/>
+  <text x="490" y="356" text-anchor="middle" class="text">查找可完成进程 Pi</text>
+  <text x="490" y="384" text-anchor="middle" class="small">Finish[i] == false 且 Need[i] &lt;= Work</text>
+
+  <polygon points="490,460 650,540 490,620 330,540" class="decision"/>
+  <text x="490" y="535" text-anchor="middle" class="text">是否找到</text>
+  <text x="490" y="562" text-anchor="middle" class="text">这样的进程？</text>
+
+  <rect x="90" y="500" width="220" height="80" class="box"/>
+  <text x="200" y="532" text-anchor="middle" class="text">Pi 可以完成</text>
+  <text x="200" y="558" text-anchor="middle" class="small">Work = Work + Allocation[i]</text>
+
+  <rect x="80" y="650" width="240" height="80" class="box"/>
+  <text x="200" y="682" text-anchor="middle" class="text">记录进程</text>
+  <text x="200" y="708" text-anchor="middle" class="small">Finish[i] = true，加入安全序列</text>
+
+  <polygon points="490,650 650,730 490,810 330,730" class="decision"/>
+  <text x="490" y="725" text-anchor="middle" class="text">所有进程</text>
+  <text x="490" y="752" text-anchor="middle" class="text">是否完成？</text>
+
+  <rect x="700" y="680" width="220" height="90" class="endSafe"/>
+  <text x="810" y="717" text-anchor="middle" class="text">系统安全</text>
+  <text x="810" y="745" text-anchor="middle" class="small">输出安全序列</text>
+
+  <rect x="700" y="500" width="220" height="90" class="endBad"/>
+  <text x="810" y="537" text-anchor="middle" class="text">系统不安全</text>
+  <text x="810" y="565" text-anchor="middle" class="small">不存在完整安全序列</text>
+
+  <path d="M 490 150 L 490 190" class="line"/>
+  <path d="M 490 280 L 490 320" class="line"/>
+  <path d="M 490 420 L 490 460" class="line"/>
+  <path d="M 330 540 L 310 540" class="line"/>
+  <text x="355" y="516" class="label">是</text>
+  <path d="M 200 580 L 200 650" class="line"/>
+  <path d="M 320 690 L 380 690" class="line"/>
+  <path d="M 650 730 L 700 730" class="line"/>
+  <text x="660" y="710" class="label">是</text>
+  <path d="M 490 650 C 490 610 260 450 490 420" class="line"/>
+  <text x="515" y="640" class="label">否，继续查找</text>
+  <path d="M 650 540 L 700 540" class="line"/>
+  <text x="660" y="520" class="label">否</text>
+</svg>
